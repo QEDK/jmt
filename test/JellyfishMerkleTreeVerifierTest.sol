@@ -38,7 +38,11 @@ contract JellyfishMerkleTreeVerifierTest is Test {
 contract JellyfishMerkleTreeVerifierUser {
     using JellyfishMerkleTreeVerifier for bytes32;
 
-    function verifyProof(bytes32 root, JellyfishMerkleTreeVerifier.Leaf calldata leaf, JellyfishMerkleTreeVerifier.Proof calldata proof) public view returns (bool) {
+    function verifyProof(
+        bytes32 root,
+        JellyfishMerkleTreeVerifier.Leaf calldata leaf,
+        JellyfishMerkleTreeVerifier.Proof calldata proof
+    ) public view returns (bool) {
         return root.verifyProof(leaf, proof);
     }
 }
